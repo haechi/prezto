@@ -82,3 +82,6 @@ export PATH=/usr/local/sbin:$PATH
 
 # Fix problem with locals when logging into ubuntu
 export LC_CTYPE="en_US.UTF-8"
+
+# Load rbenv
+eval "$(rbenv init -)"
