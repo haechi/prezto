@@ -16,7 +16,6 @@ alias lsync="rsync --verbose --progress --stats --recursive --delete --times --o
 # SSH Stuff
 alias poseidon='ssh -l alexander poseidon.sogang.ac.kr'
 alias tauri='ssh -l Alexander tauri.haechi.me'
-alias cluster='ssh -l kpyoo01 163.239.188.131'
 
 alias helios='ramdisk 1024'		   # RAMdisk with 1024 MB 
 alias unison='unison -auto'        # Unison conflict resolver (date) 
@@ -79,6 +78,9 @@ export UNISONLOCALHOSTNAME=Pandora.local
 
 # Brew Path Adjustment
 export PATH=/usr/local/sbin:$PATH
+
+# R Home Brew Installation
+export RSTUDIO_WHICH_R=/usr/local/bin/R
 
 # Load rbenv
 eval "$(rbenv init -)"
