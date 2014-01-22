@@ -60,7 +60,7 @@ function vault ()
 export TM_FORTRAN=/usr/local/bin/gfortran
 
 # Unison Host Name
-export UNISONLOCALHOSTNAME=Pandora.local
+export UNISONLOCALHOSTNAME=Goliath.local
 
 # Brew Path Adjustment
 export PATH=/usr/local/sbin:$PATH
