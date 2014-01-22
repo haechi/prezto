@@ -14,8 +14,7 @@
 alias lsync="rsync --verbose --progress --stats --recursive --delete --times --omit-dir-times --size-only --exclude-from=/Users/Alexander/.rsync /Users/Alexander/Sogang/ /Volumes/iamaKey"
 
 # SSH Stuff
-alias poseidon='ssh -l alexander poseidon.sogang.ac.kr'
-alias tauri='ssh -l Alexander tauri.haechi.me'
+alias hostname='ssh -l login host.local.com'
 
 alias helios='ramdisk 1024'		   # RAMdisk with 1024 MB 
 alias unison='unison -auto'        # Unison conflict resolver (date) 
@@ -57,19 +56,6 @@ function vault ()
 # Settings
 #
 
-# Turbomole
-export PARA_ARCH=SMP
-export PARNODES=2
-export TURBODIR=/usr/local/turbomole
-export TURBOMOLE_SYSNAME=i686-apple-darwin9
-
-# Adjusting PATH
-export PATH=$TURBODIR/scripts:$PATH
-export PATH=$TURBODIR/bin/`sysname`:$PATH
-
-# COSMOfrag
-export PATH=/Users/Alexander/Achim/local/COSMOfrag/binMac:$PATH
-
 # Textmate Fortran Bundle
 export TM_FORTRAN=/usr/local/bin/gfortran
 
@@ -87,3 +73,6 @@ eval "$(rbenv init -)"
 
 # Fix problem with locals when logging into ubuntu
 export LC_CTYPE="en_US.UTF-8"
+
+# Fix missing /usr/sbin in PATH in 10.9
+export PATH=/usr/sbin:$PATH
