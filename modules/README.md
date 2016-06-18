@@ -10,6 +10,11 @@ Archive
 
 Provides functions to list and extract archives.
 
+Autosuggestions
+---------------
+
+Integrates zsh-autosuggestions into Prezto.
+
 Command-Not-Found
 -----------------
 
@@ -26,10 +31,25 @@ Directory
 
 Sets directory options and defines directory aliases.
 
+DNF
+---
+
+Defines dnf aliases.
+
 Dpkg
 ----
 
 Defines dpkg aliases and functions.
+
+Editor
+------
+
+Sets key bindings.
+
+Emacs
+-----
+
+Enables Emacs dependency management.
 
 Environment
 -----------
@@ -41,13 +61,19 @@ Fasd
 
 Maintains a frequently used file and directory list for fast access.
 
+Git
+---
+
+Enhances the Git distributed version control system by providing aliases,
+functions and by exposing repository status information to prompts.
+
 GNU Utility
 -----------
 
 Provides for the interactive use of GNU utilities on non-GNU systems.
 
 GPG
----------
+---
 
 Provides for an easier use of GPG by setting up gpg-agent.
 
@@ -61,22 +87,22 @@ Helper
 
 Provides helper functions for developing modules.
 
-History Substring Search
-------------------------
-
-Integrates zsh-history-substring-search into Prezto.
-
 History
 -------
 
 Sets history options and defines history aliases.
+
+History Substring Search
+------------------------
+
+Integrates zsh-history-substring-search into Prezto.
 
 Homebrew
 --------
 
 Defines Homebrew aliases.
 
-Macports
+MacPorts
 --------
 
 Defines MacPorts aliases and adds MacPorts directories to path variables.
@@ -85,6 +111,11 @@ Node.js
 -------
 
 Provides utility functions for Node.js and loads npm completion.
+
+OCaml
+-----
+
+Initializes OCaml package management.
 
 OSX
 ---
@@ -137,10 +168,10 @@ Spectrum
 
 Provides for easier use of 256 colors and effects.
 
-SSH-Agent
----------
+SSH
+---
 
-Provides for an easier use of ssh-agent.
+Provides for an easier use of SSH by setting up ssh-agent.
 
 Syntax Highlighting
 -------------------
@@ -171,4 +202,3 @@ Yum
 ---
 
 Defines yum aliases.
-
