@@ -16,7 +16,7 @@ alias lsync="rsync --verbose --progress --stats --recursive --delete --times --o
 # SSH Stuff
 alias tauri='ssh -l Alexander tauri.link'
 
-alias helios='ramdisk 1024'		   # RAMdisk with 1024 MB 
+alias helios='ramdisk 1024'        # RAMdisk with 1024 MB 
 alias unison='unison -auto'        # Unison conflict resolver (date) 
 
 # Quick way to rebuild the Launch Services database
