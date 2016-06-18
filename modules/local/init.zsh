@@ -14,7 +14,7 @@
 alias lsync="rsync --verbose --progress --stats --recursive --delete --times --omit-dir-times --size-only --exclude-from=/Users/Alexander/.rsync /Users/Alexander/Sogang/ /Volumes/iamaKey"
 
 # SSH Stuff
-alias hostname='ssh -l login host.local.com'
+alias tauri='ssh -l Alexander tauri.link'
 
 alias helios='ramdisk 1024'		   # RAMdisk with 1024 MB 
 alias unison='unison -auto'        # Unison conflict resolver (date) 
