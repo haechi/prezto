@@ -11,13 +11,15 @@
 #
 
 # Update the usb repro, exclude misc dir
-alias lsync="rsync --verbose --progress --stats --recursive --delete --times --omit-dir-times --size-only --exclude-from=/Users/Alexander/.rsync /Users/Alexander/Sogang/ /Volumes/iamaKey"
+alias lsync="rsync --verbose --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude /Users/Alexander/ /Volumes/Glacier"
 
 # SSH Stuff
 alias tauri='ssh -l Alexander tauri.link'
+# alias blackbox='ssh -l Alexander -p 20022 10.0.1.42'
 
 alias helios='ramdisk 1024'        # RAMdisk with 1024 MB 
 alias unison='unison -auto'        # Unison conflict resolver (date) 
+alias ncp='rsync -avhz --progress' # Network copy
 
 # Quick way to rebuild the Launch Services database
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
