@@ -11,7 +11,7 @@
 #
 
 # Update the usb repro, exclude misc dir
-alias lsync="rsync --verbose --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude /Users/Alexander/ /Volumes/Glacier"
+alias lsync="rsync --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Glacier/"
 
 # SSH Stuff
 alias tauri='ssh -l Alexander tauri.link'
