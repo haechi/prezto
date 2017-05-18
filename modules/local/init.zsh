@@ -11,14 +11,14 @@
 #
 
 # Update the usb repro, exclude misc dir
-alias lsync="rsync --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Glacier/"
+alias lsync="rsync --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
 
 # SSH Stuff
-alias tauri='ssh -l Alexander tauri.link'
+# alias tauri='ssh -l Alexander tauri.link'
 # alias blackbox='ssh -l Alexander -p 20022 10.0.1.42'
 
 alias helios='ramdisk 1024'        # RAMdisk with 1024 MB 
-alias unison='unison -auto'        # Unison conflict resolver (date) 
+# alias unison='unison -auto'        # Unison conflict resolver (date) 
 alias ncp='rsync -avhz --progress' # Network copy
 
 # Quick way to rebuild the Launch Services database
