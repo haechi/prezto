@@ -5,25 +5,28 @@
 #   Alexander Zhou <alex@haechi.me>
 #
 
-
 #
 # Aliases
 #
 
-# Update the remote repro with the local copy
-alias rpush="rsync --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
+# Rsync
+alias rpush="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
 
-alias rpull="rsync --progress --stats --recursive --delete --times --iconv=utf-8,utf-8-mac --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/Documents /Users/Alexander/Documents"
+alias rpull="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --exclude 'Aspyr' --exclude '.*' --exclude '*eaDir' --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/Documents/ /Users/Alexander/Documents/"
 
-# SSH Stuff
+# Ramdisk with 1024 MB
+alias helios='ramdisk 1024'
+
+# Network copy
+alias ncp='rsync -avhz --progress'
+
+# SSH shortcut
 alias pandora='ssh -l Alexander Pandora.local'
-
-alias helios='ramdisk 1024'        # RAMdisk with 1024 MB
-# alias unison='unison -auto'        # Unison conflict resolver (date)
-alias ncp='rsync -avhz --progress' # Network copy
 
 # Quick way to rebuild the Launch Services database
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+
 
 
 #
