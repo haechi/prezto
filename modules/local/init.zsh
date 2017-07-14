@@ -24,12 +24,6 @@ alias ncp='rsync -avhz --progress'
 alias pandora='ssh -l Lina -p 22022 haechi.link'
 alias goliath='ssh -l Alexander -p 21022 haechi.link' 
 
-# Quick way to rebuild the Launch Services database
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-
-
-
 #
 # Functions
 #
@@ -52,22 +46,9 @@ function ff ()
 function ramdisk ()
 { diskutil erasevolume HFS+ "Helios" `hdiutil attach -nomount ram://$((${1}*2048))`; }
 
-function vault ()
-{
-  security find-generic-password -ga EncFS 2>&1 >/dev/null | \
-  cut -d'"' -f2 | encfs "/Users/Alexander/Dropbox/.vault" -S "/Users/Alexander/Library/Vault" \
-  -o fsname=Vault -o volname=Vault;
-}
-
 #
 # Settings
 #
-
-# Textmate Fortran Bundle
-export TM_FORTRAN=/usr/local/bin/gfortran
-
-# Unison Host Name
-export UNISONLOCALHOSTNAME=Goliath.local
 
 # Brew Path Adjustment
 export PATH=/usr/local/sbin:$PATH
