@@ -12,7 +12,7 @@
 # Rsync
 alias rpush="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --perms --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
 
-alias rpull="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --exclude 'Aspyr' --exclude '.*' --exclude '*eaDir' --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/Documents/ /Users/Alexander/Documents/"
+alias rpull="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/ /Users/Alexander/"
 
 # Ramdisk with 1024 MB
 alias helios='ramdisk 1024'
@@ -21,7 +21,8 @@ alias helios='ramdisk 1024'
 alias ncp='rsync -avhz --progress'
 
 # SSH shortcut
-alias pandora='ssh -l Alexander Pandora.local'
+alias pandora='ssh -l Lina -p 22022 haechi.link'
+alias goliath='ssh -l Alexander -p 21022 haechi.link' 
 
 # Quick way to rebuild the Launch Services database
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
