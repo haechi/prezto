@@ -10,9 +10,9 @@
 #
 
 # Rsync
-alias rpush="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --perms --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
+alias rpush="rsync --verbose --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --perms --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
 
-alias rpull="rsync --progress --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/ /Users/Alexander/"
+alias rpull="rsync --verbose --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/ /Users/Alexander/"
 
 # Ramdisk with 1024 MB
 alias helios='ramdisk 1024'
