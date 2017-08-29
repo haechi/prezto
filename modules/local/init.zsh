@@ -64,3 +64,6 @@ export LC_CTYPE="en_US.UTF-8"
 
 # Fix missing /usr/sbin in PATH in 10.9
 export PATH=/usr/sbin:$PATH
+
+# sqlite-3.20 PATH from Home Brew installation
+export PATH=/usr/local/opt/sqlite/bin:$PATH
