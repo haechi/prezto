@@ -9,11 +9,6 @@
 # Aliases
 #
 
-# Rsync
-alias rpush="rsync --verbose --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --perms --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass /Users/Alexander/ 10.0.1.42::Tauri/"
-
-alias rpull="rsync --verbose --stats --recursive --delete --times --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --include-from=/Users/Alexander/.rsync/include --exclude-from=/Users/Alexander/.rsync/exclude --password-file=/Users/Alexander/.pass 10.0.1.42::Tauri/ /Users/Alexander/"
-
 # Ramdisk with 1024 MB
 alias helios='ramdisk 1024'
 
@@ -29,22 +24,42 @@ alias goliath='ssh -l Alexander -p 21022 haechi.link'
 #
 
 function pp ()
-{ ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
+{ ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command; }
 
 function fp ()
-{
-  osascript -e 'tell application "Finder"'\
+{ osascript -e 'tell application "Finder"'\
   -e "if (${1-1} <= (count Finder windows)) then"\
   -e "get POSIX path of (target of window ${1-1} as alias)"\
   -e 'else' -e 'get POSIX path of (desktop as alias)'\
-  -e 'end if' -e 'end tell';
-}
+  -e 'end if' -e 'end tell'; }
 
 function ff ()
 { cd "`fp $@`"; }
 
 function ramdisk ()
 { diskutil erasevolume HFS+ "Helios" `hdiutil attach -nomount ram://$((${1}*2048))`; }
+
+function rpush ()
+{ rsync --itemize-changes --stats --human-readable --recursive --delete --times \
+		--iconv=utf-8-mac,utf-8 --perms \
+		--include-from=/Users/Alexander/.rsync/include \
+		--exclude-from=/Users/Alexander/.rsync/exclude \
+		--password-file=/Users/Alexander/.pass \
+		/Users/Alexander/ 10.0.1.42::Homestead/ | \
+		grep --color=never -E '^[^.]|^$' | \
+		GREP_COLOR='01;36' grep --color=always -E '^...........[\+\.]|$' | \
+		GREP_COLOR='01;31' grep --color=always -E '^\*deleting|$'; }
+
+function rpull ()
+{ rsync --itemize-changes --stats --human-readable --recursive --delete --times \
+	    --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x \
+	    --include-from=/Users/Alexander/.rsync/include \
+		--exclude-from=/Users/Alexander/.rsync/exclude \
+		--password-file=/Users/Alexander/.pass \
+		10.0.1.42::Homestead/ /Users/Alexander/ | \
+		grep --color=never -E '^[^.]|^$' | \
+		GREP_COLOR='01;36' grep --color=always -E '^...........[\+\.]|$' | \
+		GREP_COLOR='01;31' grep --color=always -E '^\*deleting|$'; }
 
 #
 # Settings
