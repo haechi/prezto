@@ -41,7 +41,7 @@ function ramdisk ()
 
 function rpush ()
 { rsync --itemize-changes --stats --human-readable --recursive --delete --times \
-		--iconv=utf-8-mac,utf-8 --perms \
+		--iconv=utf-8-mac,utf-8 --perms --links\
 		--include-from=/Users/Alexander/.rsync/include \
 		--exclude-from=/Users/Alexander/.rsync/exclude \
 		--password-file=/Users/Alexander/.pass \
@@ -52,9 +52,10 @@ function rpush ()
 
 function rpull ()
 { rsync --itemize-changes --stats --human-readable --recursive --delete --times \
-	    --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x \
+	    --iconv=utf-8-mac,utf-8 --chmod=o-rwx,g-w,Fa-x --links\
 	    --include-from=/Users/Alexander/.rsync/include \
 		--exclude-from=/Users/Alexander/.rsync/exclude \
+		--exclude 'Music/' \
 		--password-file=/Users/Alexander/.pass \
 		10.0.1.42::Homestead/ /Users/Alexander/ | \
 		grep --color=never -E '^[^.]|^$' | \
