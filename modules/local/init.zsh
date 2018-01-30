@@ -83,3 +83,6 @@ export PATH=/usr/sbin:$PATH
 
 # sqlite-3.20 PATH from Home Brew installation
 export PATH=/usr/local/opt/sqlite/bin:$PATH
+
+# zsh syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
